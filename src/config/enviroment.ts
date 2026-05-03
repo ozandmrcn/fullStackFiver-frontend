@@ -1,5 +1,5 @@
 export const config = {
-  API_URL: "/api/",
+  API_URL: import.meta.env.VITE_API_URL || "/api/",
   NODE_ENV: import.meta.env.VITE_NODE_ENV as string,
 
   isDevelopment: import.meta.env.MODE === "development",
