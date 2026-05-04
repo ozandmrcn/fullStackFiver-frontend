@@ -8,9 +8,11 @@ import { Analytics } from "@vercel/analytics/react";
 const queryClient = new QueryClient();
 
 createRoot(document.getElementById("root")!).render(
-  <QueryClientProvider client={queryClient}>
-    <App />
-    <ToastContainer />
+  <>
+    <QueryClientProvider client={queryClient}>
+      <App />
+      <ToastContainer />
+    </QueryClientProvider>
     <Analytics />
-  </QueryClientProvider>
+  </>,
 );
