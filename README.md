@@ -33,6 +33,10 @@ fiverrClient provides an intuitive interface for users to:
 - **SplideJS** (Sliding/Carousels)
 - **Day.js** (Date Formatting)
 
+## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Desktop%20Computer.png" alt="Desktop Computer" width="25" height="25" /> Demo  
+You can view a demo of the project by visiting the following link:  
+[Fiverr Frontned Demo](https://fullstackfiver-frontend.vercel.app/)
+
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Desktop%20Computer.png" alt="Desktop Computer" width="25" height="25" /> Setup & Installation
 
 To run the frontend locally, follow these steps:
