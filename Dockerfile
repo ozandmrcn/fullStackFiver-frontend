@@ -1,32 +1,33 @@
-# 1. Aşama: React uygulamasını derleme
+# Stage 1: Build the React application
 FROM node:22-alpine AS builder
 
-# Çalışma dizinini ayarla
+# Set working directory
 WORKDIR /app
 
-# Bağımlılık dosyalarını kopyala
+# Copy dependency files
 COPY package*.json ./
 
-# Bağımlılıkları yükle
+# Install dependencies
 RUN npm install
 
-# Proje dosyalarını kopyala
+# Copy project files
 COPY . .
 
-# React uygulamasını derle (Vite build)
+# Build the React application (Vite build)
 RUN npm run build
 
-# 2. Aşama: Nginx ile statik dosyaları sunma
+# Stage 2: Serve static files with Nginx
 FROM nginx:stable-alpine
 
-# Derlenen dosyaları Nginx'in varsayılan dizinine kopyala
+# Copy the built files to Nginx's default directory
 COPY --from=builder /app/dist /usr/share/nginx/html
 
-# Nginx yapılandırması
+# Nginx configuration
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# 80 portunu dışarı aç
+# Expose port 80
 EXPOSE 80
 
-# Nginx'i başlat
+# Start Nginx
 CMD ["nginx", "-g", "daemon off;"]
+
